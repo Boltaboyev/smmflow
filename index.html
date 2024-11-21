@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMMFLOW</title>
+    <link rel="shortcut icon" href="./assets/img/fav.png" type="image/x-icon">
+
+    <!-- output css -->
+    <link rel="stylesheet" href="./src/output.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"
+        integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="./src/swiper.css">
+
+
+
+</head>
+
+<body>
+
+
+    <input type="checkbox" name="" id="log" class="hidden">
+    <!-- login -->
+    <div
+        class="login fixed h-[100vh] w-full left-0 top-0 z-[1000] bg-[#0000003f] backdrop-blur-[6px] justify-center items-center">
+        <div
+            class="login_box py-[30px] w-[40%] bg-[#fff] rounded-md flex flex-col justify-center items-center gap-[30px] relative max-[1005px]:w-[60%] max-[550px]:w-[80%] px-[10px] max-[395px]:w-[100%] max-[395px]:h-full">
+
+            <label for="log" class="absolute right-[20px] top-[20px] text-[20px] cursor-pointer hover:text-primary">
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <h1 class="font-[500] text-[20px] ">Вход в аккаунт</h1>
+
+            <form action="" class="flex flex-col justify-start items-start gap-[15px] w-[70%] max-[650px]:w-[80%] max-[395px]:w-[90%]">
+                <label for="mail" class="w-full flex flex-col justify-start items-start gap-[5px]">
+                    <p class="font-[500] text-[16px] max-[300px]:text-[13px] ">Ваш email-адрес</p>
+                    <input type="email" id="mail" required placeholder="johndoe@google.com"
+                        class="w-full border border-[#e3e3e3] p-[10px] rounded-md outline-none text-primary">
+                </label>
+
+                <label for="pass" class="w-full flex flex-col justify-start items-start gap-[5px]">
+                    <p class="font-[500] text-[16px] max-[300px]:text-[13px] ">Ваш пароль</p>
+                    <input type="password" id="pass" required placeholder="Введите ваш пароль"
+                        class="w-full border border-[#e3e3e3] p-[10px] rounded-md outline-none text-primary">
+                </label>
+
+                <a href="#!" class="text-primary max-[300px]:text-[13px]">Забыли пароль?</a>
+                <button type="submit" class="btn w-full">Войти</button>
+            </form>
+
+            <p class="max-[300px]:text-[12px]">Нет аккаунта? <a href="#!" class="text-primary">Зарегистрироваться</a></p>
+        </div>
+    </div>
+    <!-- login end -->
+
+
+    <!-- header -->
+    <header>
+        <div class="container2 flex justify-between items-center bg-white py-[20px]">
+
+            <nav class="flex justify-center items-center gap-[40px]">
+                <a href="./index.html"><img src="./assets/img/logo.png" alt=""></a>
+
+                <input type="checkbox" id="nav" class="hidden">
+                <ul
+                    class="flex justify-center items-center gap-[30px] font-[500] text-[16px] text-[#000] max-[900px]:fixed max-[900px]:z-[999] max-[900px]:h-[100vh] max-[900px]:w-[50%] max-[900px]:bg-[#1d4ed8] max-[900px]:flex-col max-[900px]:gap-[40px] max-[900px]:text-[#fff] max-[900px]:left-[-100%] max-[900px]:bottom-0 max-[540px]:w-[70%] max-[350px]:w-[80%] max-[305px]:items-left">
+
+                    <label for="nav" class="absolute right-[30px] top-[30px] text-[25px] hidden max-[900px]:block">
+                        <i class="fa-regular fa-circle-xmark"></i>
+                    </label>
+
+                    <li><a href="#!" class="hover:text-[#0058ff] max-[900px]:hover:text-[#fff] ">Услуги</a></li>
+                    <li><a href="#!" class="hover:text-[#0058ff] max-[900px]:hover:text-[#fff]">Преимущества</a></li>
+                    <li><a href="#!" class="hover:text-[#0058ff] max-[900px]:hover:text-[#fff]">Отзывы</a></li>
+
+                    <a href="./templates/table.html" class="btn max-[355px]:block hidden">История заказов </a>
+                    <label for="log" class="btn btn_white max-[600px]:block hidden hover:text-[#fff] hover:bg-[#fff] cursor-pointer">
+                        Войти
+                    </label>
+
+
+                </ul>
+                <label for="nav" id="blue_label"
+                    class="hidden h-[100vh] w-full bg-[#0a32a052] backdrop-blur-[6px] fixed left-0 top-0 z-[888]"></label>
+            </nav>
+
+            <nav class="navbar_btn flex justify-center items-center gap-[10px]">
+                <label for="log" class="btn btn_white max-[600px]:hidden cursor-pointer">
+                    Войти</a>
+                </label>
+                <a href="./templates/table.html" class="btn max-[355px]:hidden max-[370px]:text-[13px]"><span
+                        class="max-[600px]:hidden">История заказов</span> <span
+                        class="max-[600px]:block hidden">Заказ</span> </a>
+                <label for="nav" class="hidden max-[900px]:block text-primary text-[26px] ml-[20px]">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </label>
+            </nav>
+        </div>
+    </header>
+    <!-- header end -->
+
+
+    <!-- showcase -->
+    <section class="showcase py-[30px]">
+        <div class="container2 flex max-[830px]:flex-col max-[830px]:justify-center max-[830px]:items-center ">
+            <div
+                class="flex flex-col justify-center items-start gap-[25px] w-[50%] max-[830px]:text-center max-[830px]:w-[70%] max-[830px]:items-center max-[490px]:w-[90%]">
+                <h1
+                    class="font-[600] text-[45px] text-[#222] leading-[100%] max-[1225px]:text-[35px] max-[1015px]:text-[28px] max-[630px]:text-[24px] max-[490px]:text-[18px]">
+                    Продвижение во всех <br class="max-[605px]:hidden"> соцсетях за пару
+                    кликов</h1>
+
+                <p class="font-[400] text-[16px] leading-[120%] max-[1015px]:text-[14px] max-[490px]:text-[12px]">
+                    Получайте подписчиков, лайки,
+                    репосты, просмотры, прослушивания и любую другую активность на свои
+                    профили в социальных <span class="max-[630px]:hidden">сетях по самым низким ценами на рынке и в
+                        самые быстрые сроки!</span></p>
+
+                <a href="#!" class="btn max-[830px]:hidden">Начать продвижение</a>
+            </div>
+
+            <div
+                class="flex justify-center items-center w-[50%] max-[1225px]:w-[40%] max-[630px]:w-[60%] max-[440px]:w-full">
+                <img src="./assets/img/showcase.png" alt="">
+            </div>
+
+            <a href="#!" class="btn max-[830px]:block hidden">Начать продвижение</a>
+
+        </div>
+    </section>
+    <!-- showcase end -->
+
+
+    <!-- quick order -->
+    <section class="order bg-primary py-[40px]">
+        <div class="container2 flex flex-col gap-[30px]">
+            <h1 class="font-[600] text-[35px] text-center text-[#fff] max-[560px]:text-[25px] max-[375px]:text-[20px]">
+                Быстрый заказ</h1>
+
+            <!-- Swiper -->
+            <div class="swiper mySwiper bg-[#fff] rounded-xl">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="order_social flex justify-start items-center gap-[5px]  py-[10px]">
+                            <img src="./assets/svg/1.svg" alt="" class="h-[10px] w-[10px]">
+                            <p>Instagram</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="order_social flex justify-start items-center gap-[5px]  py-[10px]">
+                            <img src="./assets/svg/2.svg" alt="" class="h-[10px] w-[10px]">
+                            <p>VK</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="order_social flex justify-start items-center gap-[5px]  py-[10px]">
+                            <img src="./assets/svg/3.svg" alt="" class="h-[10px] w-[10px]">
+                            <p>TikTok</p>
+                        </div>
+                    </div>
+
+
+                    <div class="swiper-slide">
+                        <div class="order_social flex justify-start items-center gap-[5px]  py-[10px]">
+                            <img src="./assets/svg/4.svg" alt="" class="h-[10px] w-[10px]">
+                            <p>Telegram</p>
+                        </div>
+                    </div>
+
+
+                    <div class="swiper-slide">
+                        <div class="order_social flex justify-start items-center gap-[5px]  py-[10px]">
+                            <img src="./assets/svg/5.svg" alt="" class="h-[8px] w-[8px]">
+                            <p>YouTube</p>
+                        </div>
+                    </div>
+
+
+                    <div class="swiper-slide">
+                        <div class="order_social flex justify-start items-center gap-[5px]  py-[10px]">
+                            <img src="./assets/svg/6.svg" alt="" class="h-[10px] w-[10px]">
+                            <p>Facebook</p>
+                        </div>
+                    </div>
+
+
+                    <div class="swiper-slide">
+                        <div class="order_social flex justify-start items-center gap-[5px]  py-[10px]">
+                            <img src="./assets/svg/7.svg" alt="" class="h-[10px] w-[10px]">
+                            <p>Twitter</p>
+                        </div>
+                    </div>
+
+
+                    <div class="swiper-slide">
+                        <div class="order_social flex justify-start items-center gap-[5px]  py-[10px]">
+                            <img src="./assets/svg/8.svg" alt="" class="h-[10px] w-[10px]">
+                            <p>Twitch</p>
+                        </div>
+                    </div>
+
+
+                    <div class="swiper-slide">
+                        <div class="order_social flex justify-start items-center gap-[5px]  py-[10px]">
+                            <img src="./assets/svg/9.svg" alt="" class="h-[10px] w-[10px]">
+                            <p>RuTube</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="grid grid-cols-5 gap-[20px] max-[900px]:grid-cols-3 max-[550px]:gap-[10px] max-[435px]:grid-cols-2 max-[435px]:gap-[20px] max-[340px]:gap-[15px]">
+                <div
+                    class="flex flex-col justify-center gap-[10px] items-center bg-[#fff] rounded-xl h-[200px] max-[1166px]:h-[170px] max-[1020px]:h-[150px] max-[500px]:h-[130px] max-[435px]:h-[110px]">
+                    <img src="./assets/img/emojis/1.png" alt=""
+                        class="h-[40px] w-[40px] max-[340px]:w-[30px] max-[340px]:h-[30px]">
+                    <h1>Подписчики</h1>
+                </div>
+
+                <div
+                    class="flex flex-col justify-center gap-[10px] items-center bg-[#fff] rounded-xl h-[200px] max-[1166px]:h-[170px] max-[1020px]:h-[150px] max-[500px]:h-[130px] max-[435px]:h-[110px]">
+                    <img src="./assets/img/emojis/2.png" alt=""
+                        class="h-[40px] w-[40px] max-[340px]:w-[30px] max-[340px]:h-[30px]">
+                    <h1>Лайки</h1>
+                </div>
+
+                <div
+                    class="flex flex-col justify-center gap-[10px] items-center bg-[#fff] rounded-xl h-[200px] max-[1166px]:h-[170px] max-[1020px]:h-[150px] max-[500px]:h-[130px] max-[435px]:h-[110px]">
+                    <img src="./assets/img/emojis/3.png" alt=""
+                        class="h-[40px] w-[40px] max-[340px]:w-[30px] max-[340px]:h-[30px]">
+                    <h1>Просмотры</h1>
+                </div>
+
+
+                <div
+                    class="flex flex-col justify-center gap-[10px] items-center bg-[#fff] rounded-xl h-[200px] max-[1166px]:h-[170px] max-[1020px]:h-[150px] max-[500px]:h-[130px] max-[435px]:h-[110px]">
+                    <img src="./assets/img/emojis/4.png" alt=""
+                        class="h-[40px] w-[40px] max-[340px]:w-[30px] max-[340px]:h-[30px]">
+                    <h1>Комментарии</h1>
+                </div>
+
+
+                <div
+                    class="flex flex-col justify-center gap-[10px] items-center bg-[#fff] rounded-xl h-[200px] max-[1166px]:h-[170px] max-[1020px]:h-[150px] max-[500px]:h-[130px] max-[435px]:h-[110px]">
+                    <img src="./assets/img/emojis/5.png" alt=""
+                        class="h-[40px] w-[40px] max-[340px]:w-[30px] max-[340px]:h-[30px]">
+                    <h1>Просмотры</h1>
+                </div>
+
+
+                <div
+                    class="flex flex-col justify-center gap-[10px] items-center bg-[#fff] rounded-xl h-[200px] max-[1166px]:h-[170px] max-[1020px]:h-[150px] max-[500px]:h-[130px] max-[435px]:h-[110px]">
+                    <img src="./assets/img/emojis/6.png" alt=""
+                        class="h-[40px] w-[40px] max-[340px]:w-[30px] max-[340px]:h-[30px]">
+                    <h1>Зрители</h1>
+                </div>
+
+
+                <div
+                    class="flex flex-col justify-center gap-[10px] items-center bg-[#fff] rounded-xl h-[200px] max-[1166px]:h-[170px] max-[1020px]:h-[150px] max-[500px]:h-[130px] max-[435px]:h-[110px]">
+                    <img src="./assets/img/emojis/7.png" alt=""
+                        class="h-[40px] w-[40px] max-[340px]:w-[30px] max-[340px]:h-[30px]">
+                    <h1>Статистика</h1>
+                </div>
+
+
+                <div
+                    class="flex flex-col justify-center gap-[10px] items-center bg-[#fff] rounded-xl h-[200px] max-[1166px]:h-[170px] max-[1020px]:h-[150px] max-[500px]:h-[130px] max-[435px]:h-[110px]">
+                    <img src="./assets/img/emojis/8.png" alt=""
+                        class="h-[40px] w-[40px] max-[340px]:w-[30px] max-[340px]:h-[30px]">
+                    <h1>IGTV</h1>
+                </div>
+
+
+                <div
+                    class="flex flex-col justify-center gap-[10px] items-center bg-[#fff] rounded-xl h-[200px] max-[1166px]:h-[170px] max-[1020px]:h-[150px] max-[500px]:h-[130px] max-[435px]:h-[110px]">
+                    <img src="./assets/img/emojis/9.png" alt=""
+                        class="h-[40px] w-[40px] max-[340px]:w-[30px] max-[340px]:h-[30px]">
+                    <h1>Reels</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- quick order end -->
+
+
+    <!-- comment -->
+    <section class="comment py-[50px]">
+        <div class="container2 flex flex-col gap-[40px]">
+
+            <h1 class="font-[600] text-[35px] text-center text-[#222] max-[560px]:text-[25px] max-[375px]:text-[20px]">
+                Отзывы клиентов
+            </h1>
+
+
+            <!-- Swiper -->
+            <div class="swiper mySwiper2">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div
+                            class="comment_box flex flex-col justify-center items-start gap-[25px] bg-[#f8f8f9] p-[20px] rounded-xl">
+                            <div class="flex justify-center items-center gap-[20px]">
+                                <img src="./assets/img/user.png" alt="" class="border border-[#0059ff13] rounded-full">
+                                <div class="flex justify-center items-start flex-col">
+                                    <p class="text-[18px] font-[500] text-[#19191b]">Александр</p>
+
+                                    <div class="flex justify-start items-center gap-[3px] text-[#F0C015] text-[14px]">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="font-[400] text-[#5f5f66] text-left text-[15px] max-[340px]:text-[13px]">
+                                SMMFLOW помог мне продвинуть канал на YouTube. Заказывал подписчиков и лайки, все
+                                прошло быстро и качественно, всем
+                                рекомендую!
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div
+                            class="comment_box flex flex-col justify-center items-start gap-[25px] bg-[#f8f8f9] p-[20px] rounded-xl">
+                            <div class="flex justify-center items-center gap-[20px]">
+                                <img src="./assets/img/user.png" alt="" class="border border-[#0059ff13] rounded-full">
+                                <div class="flex justify-center items-start flex-col">
+                                    <p class="text-[18px] font-[500] text-[#19191b]">Александр</p>
+
+                                    <div class="flex justify-start items-center gap-[3px] text-[#F0C015] text-[14px]">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="font-[400] text-[#5f5f66] text-left text-[15px] max-[340px]:text-[13px]">
+                                SMMFLOW помог мне продвинуть канал на YouTube. Заказывал подписчиков и лайки, все
+                                прошло быстро и качественно, всем
+                                рекомендую!
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="swiper-slide">
+                        <div
+                            class="comment_box flex flex-col justify-center items-start gap-[25px] bg-[#f8f8f9] p-[20px] rounded-xl">
+                            <div class="flex justify-center items-center gap-[20px]">
+                                <img src="./assets/img/user.png" alt="" class="border border-[#0059ff13] rounded-full">
+                                <div class="flex justify-center items-start flex-col">
+                                    <p class="text-[18px] font-[500] text-[#19191b]">Александр</p>
+
+                                    <div class="flex justify-start items-center gap-[3px] text-[#F0C015] text-[14px]">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="font-[400] text-[#5f5f66] text-left text-[15px] max-[340px]:text-[13px]">
+                                SMMFLOW помог мне продвинуть канал на YouTube. Заказывал подписчиков и лайки, все
+                                прошло быстро и качественно, всем
+                                рекомендую!
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="swiper-slide">
+                        <div
+                            class="comment_box flex flex-col justify-center items-start gap-[25px] bg-[#f8f8f9] p-[20px] rounded-xl">
+                            <div class="flex justify-center items-center gap-[20px]">
+                                <img src="./assets/img/user.png" alt="" class="border border-[#0059ff13] rounded-full">
+                                <div class="flex justify-center items-start flex-col">
+                                    <p class="text-[18px] font-[500] text-[#19191b]">Александр</p>
+
+                                    <div class="flex justify-start items-center gap-[3px] text-[#F0C015] text-[14px]">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="font-[400] text-[#5f5f66] text-left text-[15px] max-[340px]:text-[13px]">
+                                SMMFLOW помог мне продвинуть канал на YouTube. Заказывал подписчиков и лайки, все
+                                прошло быстро и качественно, всем
+                                рекомендую!
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="swiper-slide">
+                        <div
+                            class="comment_box flex flex-col justify-center items-start gap-[25px] bg-[#f8f8f9] p-[20px] rounded-xl">
+                            <div class="flex justify-center items-center gap-[20px]">
+                                <img src="./assets/img/user.png" alt="" class="border border-[#0059ff13] rounded-full">
+                                <div class="flex justify-center items-start flex-col">
+                                    <p class="text-[18px] font-[500] text-[#19191b]">Александр</p>
+
+                                    <div class="flex justify-start items-center gap-[3px] text-[#F0C015] text-[14px]">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="font-[400] text-[#5f5f66] text-left text-[15px] max-[340px]:text-[13px]">
+                                SMMFLOW помог мне продвинуть канал на YouTube. Заказывал подписчиков и лайки, все
+                                прошло быстро и качественно, всем
+                                рекомендую!
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="swiper-slide">
+                        <div
+                            class="comment_box flex flex-col justify-center items-start gap-[25px] bg-[#f8f8f9] p-[20px] rounded-xl">
+                            <div class="flex justify-center items-center gap-[20px]">
+                                <img src="./assets/img/user.png" alt="" class="border border-[#0059ff13] rounded-full">
+                                <div class="flex justify-center items-start flex-col">
+                                    <p class="text-[18px] font-[500] text-[#19191b]">Александр</p>
+
+                                    <div class="flex justify-start items-center gap-[3px] text-[#F0C015] text-[14px]">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="font-[400] text-[#5f5f66] text-left text-[15px] max-[340px]:text-[13px]">
+                                SMMFLOW помог мне продвинуть канал на YouTube. Заказывал подписчиков и лайки, все
+                                прошло быстро и качественно, всем
+                                рекомендую!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- comment end -->
+
+
+    <!-- banner -->
+    <section class="banner py-[50px]">
+        <div
+            class="container2 bg-primary rounded-[40px] p-[15px] pr-[120px] flex justify-between items-center relative overflow-hidden max-[1032px]:pr-[15px] max-[750px]:py-[30px] max-[750px]:rounded-none max-[475px]:items-center">
+            <div
+                class="flex flex-col gap-[20px] justify-center items-start p-[45px] max-[750px]:p-0 max-[475px]:w-full max-[475px]:text-center max-[475px]:items-center">
+                <h1
+                    class="font-[600] text-[35px] text-[#fff] leading-[100%] max-[925px]:text-[30px] max-[630px]:text-[20px] max-[326px]:text-[16px]">
+                    Скидки до 50% <br>
+                    в нашем телеграм-канале</h1>
+
+                <p class="text-[#fff] font-[400] leading-[100%] max-[630px]:text-[13px]">Раздаем промокоды в Telegram
+                    каждую неделю</p>
+
+                <a href="#!" class="btn btn_white btn-banner hover:bg-[#fff] max-[630px]:text-[13px]">Получить
+                    промокод</a>
+            </div>
+
+            <img src="./assets/img/banner.png" alt=""
+                class="h-[350px] max-[1090px]:h-[300px] max-[925px]:h-[250px] max-[790px]:h-[200px] max-[750px]:absolute right-[0px] bottom-[-30px] max-[530px]:h-[150px] max-[475px]:hidden">
+        </div>
+    </section>
+    <!-- banner end -->
+
+
+    <!-- FAQ -->
+    <section class="faq py-[50px]">
+        <div class="container2 flex flex-col gap-[40px]">
+            <h1 class="font-[600] text-[35px] text-center text-[#222] max-[560px]:text-[25px] max-[375px]:text-[20px]">
+                Частые вопросы
+            </h1>
+
+            <div
+                class="flex justify-between items-start gap-[25px] text-[#222] max-[1070px]:flex-col max-[1070px]:gap-[15px]">
+
+                <div class="flex flex-col justify-start items-start gap-[15px] w-[50%] max-[1070px]:w-full">
+                    <details
+                        class="p-[15px] w-full rounded-xl bg-[#f8f8f9] opacity-80 cursor-pointer select-none max-[470px]:text-[14px] max-[380px]:text-[12px] max-[280px]:text-[10px]">
+                        <summary>Почему цены на ваши услуги?</summary>
+                        <p class="mt-[20px] w-full">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quis
+                            praesentium magni officia
+                            expedita quo?</p>
+                    </details>
+
+                    <details
+                        class="p-[15px] w-full rounded-xl bg-[#f8f8f9] opacity-80 cursor-pointer select-none max-[470px]:text-[14px] max-[380px]:text-[12px] max-[280px]:text-[10px]">
+                        <summary>Как вы гарантируете качество услуг?</summary>
+                        <p class="mt-[20px] w-full">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quis
+                            praesentium magni
+                            officia
+                            expedita quo?</p>
+                    </details>
+
+                    <details
+                        class="p-[15px] w-full rounded-xl bg-[#f8f8f9] opacity-80 cursor-pointer select-none max-[470px]:text-[14px] max-[380px]:text-[12px] max-[280px]:text-[10px]">
+                        <summary>Как я могу узнать о статусе моего заказа?</summary>
+                        <p class="mt-[20px] w-full">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quis
+                            praesentium magni officia
+                            expedita quo?</p>
+                    </details>
+
+                    <details
+                        class="p-[15px] w-full rounded-xl bg-[#f8f8f9] opacity-80 cursor-pointer select-none max-[470px]:text-[14px] max-[380px]:text-[12px] max-[280px]:text-[10px]">
+                        <summary>Как быстро выполняется заказ?</summary>
+                        <p class="mt-[20px] w-full">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quis
+                            praesentium magni
+                            officia
+                            expedita quo?</p>
+                    </details>
+
+                </div>
+
+                <div class="flex flex-col justify-start items-start gap-[15px] w-[50%] max-[1070px]:w-full">
+                    <details
+                        class="p-[15px] w-full rounded-xl bg-[#f8f8f9] opacity-80 cursor-pointer select-none max-[470px]:text-[14px] max-[380px]:text-[12px] max-[280px]:text-[10px]">
+                        <summary>Какие способы оплаты вы принимаете?</summary>
+                        <p class="mt-[20px] w-full">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quis
+                            praesentium magni officia
+                            expedita quo?</p>
+                    </details>
+
+                    <details
+                        class="p-[15px] w-full rounded-xl bg-[#f8f8f9] opacity-80 cursor-pointer select-none max-[470px]:text-[14px] max-[380px]:text-[12px] max-[280px]:text-[10px]">
+                        <summary>Меня не заблокируют?</summary>
+                        <p class="mt-[20px] w-full">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quis
+                            praesentium magni
+                            officia
+                            expedita quo?</p>
+                    </details>
+
+                    <details
+                        class="p-[15px] w-full rounded-xl bg-[#f8f8f9] opacity-80 cursor-pointer select-none max-[470px]:text-[14px] max-[380px]:text-[12px] max-[280px]:text-[10px]">
+                        <summary>Как я могу связаться с вами?</summary>
+                        <p class="mt-[20px] w-full">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quis
+                            praesentium magni officia
+                            expedita quo?</p>
+                    </details>
+
+                    <details
+                        class="p-[15px] w-full rounded-xl bg-[#f8f8f9] opacity-80 cursor-pointer select-none max-[470px]:text-[14px] max-[380px]:text-[12px] max-[280px]:text-[10px]">
+                        <summary>Что произойдет, если мои лайки уйдут?</summary>
+                        <p class="mt-[20px] w-full">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quis
+                            praesentium magni
+                            officia
+                            expedita quo?</p>
+                    </details>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- FAQ end -->
+
+
+    <!-- footer -->
+    <footer class="bg-[#f8f8f9] p-[35px_0_100px_0px]">
+        <div class="container2">
+            <div
+                class="grid grid-cols-[2fr_1fr_2fr_1fr] gap-[40px] max-[900px]:grid-cols-2 max-[620px]:flex max-[620px]:flex-col">
+                <div class="flex flex-col justify-start items-start gap-[20px]">
+                    <a href="./index.html">
+                        <img src="./assets/img/logo.png" alt="">
+                    </a>
+
+                    <small class="font-[400] opacity-75 leading-[140%]">SMMFLOW - сервис, где вы сможете приобрести
+                        качественное продвижение в социальных сетях по
+                        выгодным ценам.</small>
+
+                    <div class="flex justify-start items-center gap-[4px]">
+                        <img src="./assets/img/payment/1.png" alt="" class="cursor-pointer active:scale-[.90]">
+                        <img src="./assets/img/payment/2.png" alt="" class="cursor-pointer active:scale-[.90]">
+                        <img src="./assets/img/payment/3.png" alt="" class="cursor-pointer active:scale-[.90]">
+                        <img src="./assets/img/payment/4.png" alt="" class="cursor-pointer active:scale-[.90]">
+                    </div>
+                </div>
+
+                <ul
+                    class="flex flex-col justify-start items-start gap-[12px] max-[330px]:text-[14px] max-[900px]:order-3">
+                    <li><a href="#!">Каталог услуг</a></li>
+                    <li><a href="#!">Преимущества</a></li>
+                    <li><a href="#!">Отзывы</a></li>
+                </ul>
+
+                <ul
+                    class="flex flex-col justify-start items-start gap-[12px] max-[330px]:text-[14px] max-[900px]:order-4">
+                    <li><a href="#!">Политика конфиденциальности</a></li>
+                    <li><a href="#!">Публичная оферта</a></li>
+                    <li><a href="#!">Пользовательское соглашение</a></li>
+                    <li><a href="#!">Правила сервиса</a></li>
+                    <li><a href="#!">Контакты</a></li>
+                </ul>
+
+                <div
+                    class="flex flex-col justify-start items-start gap-[12px] max-[330px]:text-[14px] max-[900px]:order-2">
+                    <h3>Нужна помощь?</h3>
+
+                    <a href="#!"
+                        class="py-[8px] px-[13px] bg-[#ebebeb] rounded hover:bg-primary hover:text-[#fff] active:scale-[.90]">Онлайн-чат</a>
+
+                    <a href="mailto:support@smmflow.net" class="hover:text-primary">support@smmflow.net</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+    <!-- Main JS -->
+    <script src="./js/main.js"></script>
+
+
+</body>
+
+</html>

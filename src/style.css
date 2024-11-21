@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1d4ed8;
+    border-radius: 3px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: .2s;
+}
+
+.container2 {
+    width: 90%;
+    margin: 0 auto;
+}
+
+@media (min-width: 1400px) {
+    .container2 {
+        width: 1350px;
+    }
+}
+
+.btn {
+    padding: 9px 24px;
+    background: #1d4ed8;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: 500;
+    border: 1px solid #1d4ed8;
+    text-align: center;
+}
+
+.btn_white {
+    border-color: #1d4ed8;
+    background: #fff !important;
+    color: #1d4ed8;
+}
+
+.btn:hover {
+    background: #0a32a0;
+}
+
+.btn_white:hover {
+    background: #1d4fd811 !important;
+}
+
+.btn:active {
+    transform: scale(.90);
+}
+
+.btn-banner:hover {
+    background: #fff !important;
+}
+
+header {
+    box-shadow: 0 4px 20px 0 rgba(232, 232, 232, 0.61);
+}
+
+#nav:checked + ul {
+    left: 0%;
+}
+
+#nav:checked ~ #blue_label {
+    display: block;
+}
+
+footer ul li:hover a {
+    color: #1d4ed8;
+}
+
+footer ul li:hover {
+    transform: translateX(5px);
+}
+
+.login {
+    display: none;
+}
+
+#log:checked + .login {
+    display: flex;
+}
